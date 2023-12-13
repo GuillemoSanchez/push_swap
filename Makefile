@@ -23,7 +23,8 @@ LIBFT_MAKE = Makefile
 LFLAGS:= -L $(LIBFT_DIR) -lft
 
 SRC = 	ft_push_swap.c \
-		ft_parse.c
+		ft_parse.c \
+		ft_free.c
 
 OBJS = $(SRC:%.c=$(BIN)/%.o)
 
