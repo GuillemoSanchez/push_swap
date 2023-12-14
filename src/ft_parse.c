@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:05 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/13 19:42:35 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:35:59 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 	Vamos a meter tode el parseo aquí
 	Recomendan guardar todo con un split en la lista y hacer todas las comprobaciones
 */
-int	white_space(char *str)
+void	white_space(char *str)
 {
-
-	while (str[cont] == ' ' || (str[cont] >= '\t' && str[cont] <= '\r'))
-		
-	return (cont);
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (!*str)
+		print_error();
 }
 
 int	ft_atoi2(char *str)
@@ -31,8 +31,7 @@ int	ft_atoi2(char *str)
 
 	num = 0;
 	sig = 1;
-	while (white_space(str))
-		str++;
+	white_space(str);
 	if (!*str)
 		print_error();
 	if (*str == '-' || *str == '+')
@@ -58,7 +57,6 @@ t_stack	*process(int argc, char **argv, int *size)
 	t_stack	*a;
 	int		i;
 	int		j;
-	int		pru;
 	char	**tmp;
 
 	i = 1;
@@ -68,11 +66,17 @@ t_stack	*process(int argc, char **argv, int *size)
 	while (argc > i)
 	{
 		j = 0;
+		white_space(argv[i]);
 		tmp = ft_split(argv[i], ' ');
 		while (tmp[j])
 		{
-			pru = ft_atoi2(tmp[j]);
+			add_back(&a, stack_new(ft_atoi2(tmp[j])));
 			j++;
+			*size += 1;
 		}
+		free_split(tmp);
+		free(tmp);
+		i++;
 	}
+	return (a);
 }

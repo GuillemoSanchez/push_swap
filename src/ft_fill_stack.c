@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_fill_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 19:11:16 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/14 19:32:39 by guisanch         ###   ########.fr       */
+/*   Created: 2023/12/14 18:49:13 by guisanch          #+#    #+#             */
+/*   Updated: 2023/12/14 19:35:46 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_pushswap.h"
 
-void	print_error(void)
+t_stack	*stack_new(int con)
 {
-	ft_printf("\033[0;31m""Error\n");
-	exit(EXIT_FAILURE);
+	t_stack	*new;
+
+	new = (t_stack *) ft_calloc(sizeof(t_stack), 1);
+	if (!new)
+		print_error();
+	new->value = con;
+	new->next = NULL;
+	return (new);
 }
 
-void	free_split(char **str)
+void	add_back(t_stack **lst, t_stack *new)
 {
-	char	*s1;
+	t_stack	*tmp;
 
-	if (!str)
+	if (!lst)
 		return ;
-	while (*str)
+	if (*lst)
 	{
-		s1 = *str,
-		str++;
-		free(s1);
+		tmp = *lst;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
-	*str = NULL;
+	else
+		*lst = new;
 }
