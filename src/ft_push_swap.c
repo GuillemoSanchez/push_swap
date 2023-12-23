@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/12 20:24:55 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/23 12:20:08 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ int	main(int argc, char *argv[])
 	size = 0;
 	if (argc > 1)
 	{
+		if (argc < 2)
+			print_error();
 		a = process(argc, argv, &size);
+		if (ft_dupcheck(a))
+		{
+			freestack(&a);
+			print_error();
+		}
 	}
 }

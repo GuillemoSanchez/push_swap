@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/14 19:35:26 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/23 12:19:26 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,7 @@ void	add_back(t_stack **lst, t_stack *new);
 void	print_error(void);
 void	free_split(char **str);
 
+/*--- COMPROBATION ---*/
+int		ft_dupcheck(t_stack *stack);
+void	freestack(t_stack **s);
 #endif
