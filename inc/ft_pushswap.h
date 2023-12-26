@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/23 13:42:18 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:28:37 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,7 @@ void	freestack(t_stack **s);
 /*--- COMPROBATION ---*/
 int		ft_dupcheck(t_stack *stack);
 int		ft_sortcheck(t_stack *stack);
+
+/*--- MOVEMENT ---*/
+void	rotate(t_stack **list, char option);
 #endif
