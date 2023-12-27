@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/26 20:26:51 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/27 20:08:10 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 		 (si b esta vacio no hace nada)
 	pb-> Toma el primer elemento del stack a y lo pone el primero del stack b
 		 (si a esta vacio no hace nada)
-	ra-> rota la lista a si tengo 1, 2, 3, 4 lo convierte en   2, 3, 4, 1
-	rb-> rota la lista b si tengo 1, 2, 3, 4 lo convierte en 2, 3, 4, 1
+	ra-> rota la lista a si tengo 1, 2, 3, 4 lo convierte en 4, 2, 3, 1
+	rb-> rota la lista b si tengo 1, 2, 3, 4 lo convierte en 4, 2, 3, 1
 	rr-> rota ambas listas
 	rra-> lo hace al contrario rota la lista a si tengo 4, 3, 2, 1 lo convierte en 1, 4, 3, 2
 	rrb-> lo hace al contrario rota la lista b si tengo 4, 3, 2, 1 lo convierte en 1, 4, 3, 2
@@ -51,6 +51,11 @@ int	main(int argc, char *argv[])
 		{
 			print_error();
 		}
-		rotate(&a, 'a');
+		rrotate(&a, 'a');
+		while (a)
+		{
+			ft_printf("%d\n", a->value);
+			a = a->next;
+		}
 	}
 }
