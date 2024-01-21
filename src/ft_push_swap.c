@@ -6,15 +6,15 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/27 20:08:10 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:37:29 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_pushswap.h"
 
 /*
-	sa-> intercambia 2 primeros elementos de a(Check si hay 1 nuemro o menos >:()
-	sb-> intercambia 2 primeros elementos de b(Check si hay 1 nuemro o menos >:()
+	sa-> intercambia 2 primeros elementos de a(Check si hay 1 numero o menos >:()
+	sb-> intercambia 2 primeros elementos de b(Check si hay 1 numero o menos >:()
 	ss-> los dos a la ves quiere decir que sa y sb se ejecutan
 	pa-> Toma el primer elemento del stack b y lo pone el primero del stack a
 		 (si b esta vacio no hace nada)
@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 		{
 			print_error();
 		}
-		rrotate(&a, 'a');
+		swap_stack(&a, 'a');
 		while (a)
 		{
 			ft_printf("%d\n", a->value);

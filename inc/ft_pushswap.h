@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/28 19:49:18 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:37:12 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ int		ft_sortcheck(t_stack *stack);
 /*--- MOVEMENT ---*/
 void	rotate(t_stack **list, char option);
 void	reverse_rotate(t_stack **list, char option);
+void	rr(t_stack *a, t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
+/*--- SWAP ---*/
+void	swap_stack(t_stack **list, char option);
 #endif
