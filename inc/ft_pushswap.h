@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2024/01/21 12:37:12 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:27:36 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 /*--- SWAP ---*/
 void	swap_stack(t_stack **list, char option);
+
+/*--- ft_sort ---*/
+
 #endif

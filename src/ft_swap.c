@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 12:20:05 by guisanch          #+#    #+#             */
-/*   Updated: 2024/01/21 13:26:13 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:27:23 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,23 @@ void	swap_stack(t_stack **list, char option)
 		ft_printf("sb\n");
 }
 
-void	swap_stack(t_stack *a, t_stack *b)
+void	swap_twice_stack(t_stack *a, t_stack *b)
 {
 	swap_stack(&a, 'x');
 	swap_stack(&b, 'x');
 	ft_printf("ss\n");
 }
 
-void	push_to_stack(t_stack *a, t_stack *b)
+void	push_to_stack(t_stack **origin, t_stack **des, char option)
 {
-	
+	t_stack	*aux;
+
+	aux = (*origin);
+	(*origin) = aux->value;
+	aux->next = (*des);
+	(*des) = aux;
+	if (option == 'a')
+		ft_printf("pa\n");
+	else
+		ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2024/01/21 12:37:29 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:23:43 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,6 @@ int	main(int argc, char *argv[])
 		{
 			print_error();
 		}
-		swap_stack(&a, 'a');
-		while (a)
-		{
-			ft_printf("%d\n", a->value);
-			a = a->next;
-		}
+		sort_stack(*a, *b);
 	}
 }
