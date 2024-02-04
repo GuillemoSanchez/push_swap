@@ -1,0 +1,17 @@
+
+{
+	"configurations": [
+		{
+			"name": "42MAC lldb",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/push_swap",
+			"args": ["2 3 1"],
+			"stopAtEntry": true,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb",
+		}
+	]
+}

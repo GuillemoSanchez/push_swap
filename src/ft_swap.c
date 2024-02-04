@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 12:20:05 by guisanch          #+#    #+#             */
-/*   Updated: 2024/01/28 11:27:23 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:31:10 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	swap_stack(t_stack **list, char option)
 {
 	t_stack	*tmp;
-	int		save;
 
 	tmp = (*list);
 	if (!tmp->next)
 		return ;
-	save = tmp->value;
-	tmp->value = tmp->next->value;
-	tmp = tmp->next;
-	tmp->value = save;
+	*list = (*list)->next;
+	tmp->next = (*list)->next;
+	(*list)->next = tmp;
 	if (option == 'a')
 		ft_printf("sa\n");
 	if (option == 'b')
@@ -42,7 +40,7 @@ void	push_to_stack(t_stack **origin, t_stack **des, char option)
 	t_stack	*aux;
 
 	aux = (*origin);
-	(*origin) = aux->value;
+	(*origin) = aux->next;
 	aux->next = (*des);
 	(*des) = aux;
 	if (option == 'a')

@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 20:15:41 by guisanch          #+#    #+#             */
-/*   Updated: 2024/01/21 12:13:39 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:17:03 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 void	rotate(t_stack **list, char option)
 {
 	t_stack	*tmp;
-	int		save;
 
 	tmp = (*list);
-	save = tmp->value;
-	while (tmp->next)
-	{
-		tmp->value = tmp->next->value;
-		tmp = tmp->next;
-	}
-	tmp->value = save;
+	if (!tmp)
+		return ;
+	while ((*list)->next)
+		*list = (*list)->next;
+	(*list)->next = tmp;
+	*list = tmp->next;
+	tmp->next = NULL;
 	if (option == 'a')
 		ft_printf("ra\n");
 	if (option == 'b')
@@ -34,28 +33,26 @@ void	rotate(t_stack **list, char option)
 void	reverse_rotate(t_stack **list, char option)
 {
 	t_stack	*tmp;
-	int		change;
-	int		save;
+	t_stack	*last;
+	t_stack	*pre;
 
-	tmp = (*list);
-	while (tmp->next)
-		tmp = tmp->next;
-	save = tmp->value;
-	tmp = (*list);
-	change = tmp->value;
-	while (tmp->next)
+	pre = (*list);
+	last = (*list)->next;
+	if (last != NULL)
 	{
-		tmp = tmp->next;
-		tmp->idx = tmp->value;
-		tmp->value = change;
-		change = tmp->idx;
+		while (last->next)
+			last = last->next;
+		while (pre->next->next)
+			pre = pre->next;
+		tmp = (*list);
+		(*list) = last;
+		last->next = tmp;
+		pre->next = NULL;
+		if (option == 'a')
+			ft_printf("rra\n");
+		if (option == 'b')
+			ft_printf("rrb\n");
 	}
-	tmp = (*list);
-	tmp->value = save;
-	if (option == 'a')
-		ft_printf("rra\n");
-	if (option == 'b')
-		ft_printf("rrb\n");
 }
 
 void	rr(t_stack *a, t_stack *b)
