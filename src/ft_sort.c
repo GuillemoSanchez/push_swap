@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:27:48 by guisanch          #+#    #+#             */
-/*   Updated: 2024/02/04 11:04:08 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:02:22 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,17 @@ void	sort_three_numbers(t_stack **a)
 	sec = (*a)->next;
 	if (fir->idx > sec->idx)
 		swap_stack(a, 'a');
+}
+
+void	ft_push_swap(t_stack *a, t_stack *b, int size)
+{
+	// t_stack	**tmp;
+
+	// tmp = a;
+	// while ()
+	// {
+	// }
+	(void) b;
+	if (size == 3)
+		sort_three_numbers(&a);
 }

@@ -6,15 +6,14 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:05 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/14 19:35:59 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:10:31 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_pushswap.h"
-
 /*
 	Vamos a meter tode el parseo aquí
-	Recomendan guardar todo con un split en la lista y hacer todas las comprobaciones
+	Recomiendan guardar todo con un split en la lista y hacer todas las comprobaciones
 */
 void	white_space(char *str)
 {
@@ -26,7 +25,7 @@ void	white_space(char *str)
 
 int	ft_atoi2(char *str)
 {
-	int		num;
+	long	num;
 	int		sig;
 
 	num = 0;

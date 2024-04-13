@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2024/02/04 11:20:41 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:01:55 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,6 @@ int	main(int argc, char *argv[])
 			print_error();
 		}
 		asig_indx(a, size);
-		sort_three_numbers(&a);
-		while (a)
-		{
-			ft_printf("%d\n", a->value);
-			a = a->next;
-		}
+		ft_push_swap(a, b, size);
 	}
 }
