@@ -29,7 +29,8 @@ SRC = 	ft_push_swap.c \
 		ft_comprobation.c \
 		movement.c \
 		ft_swap.c \
-		ft_sort.c
+		ft_sort.c \
+		ft_functions.c
 
 OBJS = $(SRC:%.c=$(BIN)/%.o)
 

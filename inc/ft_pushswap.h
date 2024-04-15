@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/13 12:11:58 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:58:08 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void		push_to_stack(t_stack **origin, t_stack **des, char option);
 /*--- SORT ---*/
 void		sort_three_numbers(t_stack **a);
 void		asig_indx(t_stack *a, int size);
-void		ft_push_swap(t_stack *a, t_stack *b, int size);
+void		ft_push_swap(t_stack **a, t_stack **b, int size);
+void		sort_more_three(t_stack **a, t_stack **b, int size);
+
+/*--- FUNCTION ---*/
+void		push_except_three(t_stack **a, t_stack **b, int size);
+void		push_and_decrease(t_stack **a, t_stack **b, int *current_size);
 
 #endif
