@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:22:04 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/15 18:45:25 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:20:54 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,20 @@ void	push_except_three(t_stack **a, t_stack **b, int size)
 			push_and_decrease(a, b, &current_size);
 	}
 	sort_three_numbers(a);
+}
+
+void	calculate_positions(t_stack *s)
+{
+	t_stack *aux;
+	int		i;
+	
+	i = 0;
+	aux = s;
+	while (aux)
+	{
+		aux->pos = i;
+		i++;
+		aux = aux->next;
+	}
+	ft_printf("Hola estuve aquí\n");
 }

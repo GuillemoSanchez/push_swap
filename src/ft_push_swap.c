@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/15 19:00:30 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:06:43 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ int	main(int argc, char *argv[])
 		ft_printf("----------A-----------\n");
 		while (a)
 		{
-			ft_printf("%d\n", a->value);
+			ft_printf("%d pos->\n", a->value);
 			a = a->next;
 		}
 		ft_printf("----------B-----------\n");
 		while (b)
 		{
-			ft_printf("%d\n", b->value);
+			ft_printf("%d pos->\n", b->value);
 			b = b->next;
 		}
 	}
