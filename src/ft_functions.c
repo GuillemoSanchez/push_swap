@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:22:04 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/17 20:20:54 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:37:28 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ void	calculate_positions(t_stack *s)
 		aux = aux->next;
 	}
 	ft_printf("Hola estuve aquí\n");
+}
+
+void	assign_target_pos(t_stack **a, t_stack **b)
+{
+	t_stack *aux_b;
+
+	aux_b = *b;
+	while (aux_b)
+	{
+		assign_target_low_idx(a, &aux_b);
+		aux_b = aux_b->next;
+	}
+	
 }

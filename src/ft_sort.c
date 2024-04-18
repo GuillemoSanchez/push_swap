@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:27:48 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/17 20:12:18 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:40:51 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,13 @@ void	sort_more_three(t_stack **a, t_stack **b, int size)
 	size_b = size - 3;
 	(void) size_a;
 	(void) size_b;
-	calculate_positions(a);
+	while (*b)
+	{
+		calculate_positions(*a);
+		calculate_positions(*b);
+		assign_target_pos(a, b);
+		assign_costs(b, size_a, size_b);
+	}
 }
 
 void	ft_push_swap(t_stack **a, t_stack **b, int size)

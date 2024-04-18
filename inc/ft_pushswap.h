@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/17 20:19:49 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:55:24 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ typedef struct s_stack
 	int				value;
 	int				idx;
 	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -63,5 +66,11 @@ void		sort_more_three(t_stack **a, t_stack **b, int size);
 void		push_except_three(t_stack **a, t_stack **b, int size);
 void		push_and_decrease(t_stack **a, t_stack **b, int *current_size);
 void		calculate_positions(t_stack *s);
+void		assign_target_pos(t_stack **a, t_stack **b);
+
+/*--- TARGET ---*/
+void		assign_target_low_idx(t_stack **a, t_stack **b);
+int			biggest_index(t_stack **a);
+
 
 #endif
