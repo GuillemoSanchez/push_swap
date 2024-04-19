@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 20:15:41 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 20:01:15 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:50:23 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ void	reverse_rotate(t_stack **list, char option)
 	}
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack **a, t_stack **b)
 {
-	rotate(&a, 'x');
-	rotate(&b, 'x');
+	rotate(a, 'x');
+	rotate(b, 'x');
 	ft_printf("rr\n");
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
-	reverse_rotate(&a, 'x');
-	reverse_rotate(&b, 'x');
+	reverse_rotate(a, 'x');
+	reverse_rotate(b, 'x');
 	ft_printf("rrr\n");
 }

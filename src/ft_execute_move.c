@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 20:01:43 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 20:29:32 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:50:45 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@ void	exec_duble(t_stack **a, t_stack **b, int *movsa, int *movsb)
 {
 	if ((*movsa) > 0 && (*movsb) > 0)
 	{
-		rr(*a, *b);
+		rr(a, b);
 		(*movsa)--;
 		(*movsb)--;
 	}
 	else if ((*movsa) < 0 && (*movsb) < 0)
 	{
-		rrr(*a, *b);
+		rrr(a, b);
 		(*movsa)++;
 		(*movsb)++;
 	}
