@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:22:04 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/18 18:37:28 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:34:14 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	calculate_positions(t_stack *s)
 		i++;
 		aux = aux->next;
 	}
-	ft_printf("Hola estuve aquí\n");
 }
 
 void	assign_target_pos(t_stack **a, t_stack **b)
@@ -69,4 +68,24 @@ void	assign_target_pos(t_stack **a, t_stack **b)
 		aux_b = aux_b->next;
 	}
 	
+}
+
+void	exec_optimal(t_stack **a, t_stack **b, int *size_a, int *size_b)
+{
+	t_stack	*best;
+	t_stack *aux_b;
+	
+	aux_b = *b;
+	best = *b;
+	while (aux_b)
+	{
+		if ((absv(best->cost_a) + absv(best->cost_b))
+			>(absv(aux_b->cost_a) + absv(aux_b->cost_b)))
+			best = aux_b;
+		aux_b = aux_b->next;
+	}
+	execute_move(a, b, best->cost_a, best->cost_b);
+	push_to_stack(b, a, 'a');
+	(*size_a)++;
+	(*size_b)--;
 }

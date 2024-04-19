@@ -13,7 +13,7 @@ TITLE			=	\033[38;5;33m
 BIN = bin
 DIR_SRC = src
 INCLUDE = -I inc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc $(CFLAGS) $(INCLUDE)
 
 # <------ LIBFT ------>
@@ -32,7 +32,8 @@ SRC = 	ft_push_swap.c \
 		ft_sort.c \
 		ft_functions.c \
 		ft_target.c \
-		ft_cost_move.c
+		ft_cost_move.c \
+		ft_execute_move.c
 
 OBJS = $(SRC:%.c=$(BIN)/%.o)
 

@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:11:16 by guisanch          #+#    #+#             */
-/*   Updated: 2023/12/23 12:18:49 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:48:11 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ void	free_split(char **str)
 	*str = NULL;
 }
 
-void	freestack(t_stack **s)
+void	freestack(t_stack *s)
 {
 	t_stack	*tmp;
 
 	if (s)
 	{
-		while (*s)
+		while (s)
 		{
-			tmp = (*s)->next;
-			free(*s);
-			(*s) = tmp;
+			tmp = (s)->next;
+			free(s);
+			(s) = tmp;
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:26:42 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/17 20:06:43 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:48:46 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,14 @@ int	main(int argc, char *argv[])
 		a = process(argc, argv, &size);
 		if (ft_dupcheck(a))
 		{
-			freestack(&a);
+			freestack(a);
 			print_error();
 		}
 		if (ft_sortcheck(a))
-		{
 			print_error();
-		}
 		asig_indx(a, size);
 		ft_push_swap(&a, &b, size);
-		ft_printf("----------A-----------\n");
-		while (a)
-		{
-			ft_printf("%d pos->\n", a->value);
-			a = a->next;
-		}
-		ft_printf("----------B-----------\n");
-		while (b)
-		{
-			ft_printf("%d pos->\n", b->value);
-			b = b->next;
-		}
+		freestack(a);
+		freestack(b);
 	}
 }

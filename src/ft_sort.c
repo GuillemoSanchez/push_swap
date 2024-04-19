@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:27:48 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/18 18:40:51 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:11:54 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	sort_more_three(t_stack **a, t_stack **b, int size)
 		calculate_positions(*b);
 		assign_target_pos(a, b);
 		assign_costs(b, size_a, size_b);
+		exec_optimal(a, b, &size_a, &size_b);
 	}
+	rotate_sorted(a, size_a);
 }
 
 void	ft_push_swap(t_stack **a, t_stack **b, int size)

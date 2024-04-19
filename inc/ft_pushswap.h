@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/18 18:55:24 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:47:56 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		add_back(t_stack **lst, t_stack *new);
 /*--- FREE ---*/
 void		print_error(void);
 void		free_split(char **str);
-void		freestack(t_stack **s);
+void		freestack(t_stack *s);
 
 /*--- COMPROBATION ---*/
 int			ft_dupcheck(t_stack *stack);
@@ -67,10 +67,19 @@ void		push_except_three(t_stack **a, t_stack **b, int size);
 void		push_and_decrease(t_stack **a, t_stack **b, int *current_size);
 void		calculate_positions(t_stack *s);
 void		assign_target_pos(t_stack **a, t_stack **b);
+void		exec_optimal(t_stack **a, t_stack **b, int *size_a, int *size_b);
 
 /*--- TARGET ---*/
 void		assign_target_low_idx(t_stack **a, t_stack **b);
 int			biggest_index(t_stack **a);
 
+/*--- COST_MOVE ---*/
+void 		assign_costs(t_stack **b, int size_a, int size_b);
+int			absv(int num);
+
+/*--- EXCUTE_MOVE ---*/
+void		exec_duble(t_stack **a, t_stack **b, int *movsa, int *movsb);
+void		execute_move(t_stack **a, t_stack **b, int movsa, int movsb);
+void		rotate_sorted(t_stack **a, int size_a);
 
 #endif
