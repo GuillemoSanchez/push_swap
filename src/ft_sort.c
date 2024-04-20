@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:27:48 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 21:33:07 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:15:41 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	sort_more_three(t_stack **a, t_stack **b, int size)
 {
 	int	size_a;
 	int	size_b;
-	
+
 	push_except_three(a, b, size);
 	size_a = 3;
 	size_b = size - 3;
@@ -84,7 +84,7 @@ void	sort_more_three(t_stack **a, t_stack **b, int size)
 
 void	ft_push_swap(t_stack **a, t_stack **b, int size)
 {
-	if(!ft_sortcheck(*a))
+	if (!ft_sortcheck(*a))
 	{
 		if (size == 2)
 			swap_stack(a, 'a');

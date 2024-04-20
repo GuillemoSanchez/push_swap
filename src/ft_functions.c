@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:22:04 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 20:34:14 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:15:24 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	push_except_three(t_stack **a, t_stack **b, int size)
 
 void	calculate_positions(t_stack *s)
 {
-	t_stack *aux;
+	t_stack	*aux;
 	int		i;
-	
+
 	i = 0;
 	aux = s;
 	while (aux)
@@ -59,7 +59,7 @@ void	calculate_positions(t_stack *s)
 
 void	assign_target_pos(t_stack **a, t_stack **b)
 {
-	t_stack *aux_b;
+	t_stack	*aux_b;
 
 	aux_b = *b;
 	while (aux_b)
@@ -67,20 +67,19 @@ void	assign_target_pos(t_stack **a, t_stack **b)
 		assign_target_low_idx(a, &aux_b);
 		aux_b = aux_b->next;
 	}
-	
 }
 
 void	exec_optimal(t_stack **a, t_stack **b, int *size_a, int *size_b)
 {
 	t_stack	*best;
-	t_stack *aux_b;
-	
+	t_stack	*aux_b;
+
 	aux_b = *b;
 	best = *b;
 	while (aux_b)
 	{
 		if ((absv(best->cost_a) + absv(best->cost_b))
-			>(absv(aux_b->cost_a) + absv(aux_b->cost_b)))
+			> (absv(aux_b->cost_a) + absv(aux_b->cost_b)))
 			best = aux_b;
 		aux_b = aux_b->next;
 	}

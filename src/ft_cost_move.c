@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:42:02 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 20:27:58 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:17:13 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	calc_cost_b(t_stack **b, int size_b)
 	aux_b = *b;
 	while (aux_b)
 	{
-		if((aux_b->pos + 1) <= size_b / 2 + 1)
+		if ((aux_b->pos + 1) <= size_b / 2 + 1)
 			aux_b->cost_b = aux_b->pos;
 		else
 			aux_b->cost_b = aux_b->pos - size_b;
@@ -42,7 +42,7 @@ static void	calc_cost_a(t_stack **b, int size_a)
 	}
 }
 
-void assign_costs(t_stack **b, int size_a, int size_b)
+void	assign_costs(t_stack **b, int size_a, int size_b)
 {
 	calc_cost_b(b, size_b);
 	calc_cost_a(b, size_a);
@@ -50,7 +50,7 @@ void assign_costs(t_stack **b, int size_a, int size_b)
 
 int	absv(int num)
 {
-	if(num < 0)
+	if (num < 0)
 		return (num * -1);
 	return (num);
 }

@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:45:59 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 21:49:39 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:02:50 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		assign_target_low_idx(t_stack **a, t_stack **b);
 int			biggest_index(t_stack **a);
 
 /*--- COST_MOVE ---*/
-void 		assign_costs(t_stack **b, int size_a, int size_b);
+void		assign_costs(t_stack **b, int size_a, int size_b);
 int			absv(int num);
 
 /*--- EXCUTE_MOVE ---*/

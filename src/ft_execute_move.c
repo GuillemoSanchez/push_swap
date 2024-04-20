@@ -6,11 +6,12 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 20:01:43 by guisanch          #+#    #+#             */
-/*   Updated: 2024/04/19 21:50:45 by guisanch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:17:38 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_pushswap.h"
+
 void	exec_duble(t_stack **a, t_stack **b, int *movsa, int *movsb)
 {
 	if ((*movsa) > 0 && (*movsb) > 0)
@@ -75,7 +76,6 @@ static int	calc_rotates(t_stack **a, int size_a)
 	}
 	return (0);
 }
-
 
 void	rotate_sorted(t_stack **a, int size_a)
 {
